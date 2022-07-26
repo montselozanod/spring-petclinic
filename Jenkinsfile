@@ -1,11 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh '''#checkout code
- sh \'./mvnw package\'
- sh \'java -jar target/*.jar\''''
+        sh '''sh \'./mvnw package\'
+sh \'java -jar target/*.jar\''''
       }
     }
 
