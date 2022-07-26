@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build Application') {
       steps {
-        sh '''./mvnw package
-java -jar target/*.jar'''
+        sh '''./mvnw package -Dserver.port=8888
+java -Dserver.port=8888 -jar target/*.jar'''
       }
     }
 
