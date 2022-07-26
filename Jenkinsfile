@@ -12,7 +12,7 @@ pipeline {
       parallel {
         stage('Copy PetClinic Jar') {
           steps {
-            sh 'docker cp jenkins-blueocean:/var/jenkins_home/workspace/spring-petclinic_main/target/spring-petclinic-2.7.0-SNAPSHOT.jar /home/malozanod/devOps-assignment1/petclinic.jar'
+            sh 'docker cp jenkins-blueocean:/var/jenkins_home/workspace/spring-petclinic_main/target/spring-petclinic-2.7.0-SNAPSHOT.jar ~/devOps-assignment1/petclinic.jar'
           }
         }
 
