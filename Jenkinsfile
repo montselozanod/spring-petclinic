@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('Build Application') {
       steps {
-        sh '''sh \'./mvnw package\'
-sh \'java -jar target/*.jar\''''
+        sh '''./mvnw package
+java -jar target/*.jar'''
       }
     }
 
