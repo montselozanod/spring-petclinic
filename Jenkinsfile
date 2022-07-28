@@ -17,5 +17,11 @@ pipeline {
       }
     }
 
+    stage('Deployment') {
+      steps {
+        sh 'java -Dserver.port=8888 -jar target/*.jar'
+      }
+    }
+
   }
 }
