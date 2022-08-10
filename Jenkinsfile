@@ -8,20 +8,10 @@ pipeline {
       }
     }
 
-    stage('Sonarqube Analysis') {
+   stage('Deployment') {
       steps {
-        withSonarQubeEnv('sonarqube') {
-          sh './mvnw clean package sonar:sonar'
-        }
-
+        ansiblePlaybook(disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'playbook.yml')
       }
     }
-
-    stage('Deployment') {
-      steps {
-        sh 'java -Dserver.port=8888 -jar target/*.jar'
-      }
-    }
-
   }
 }
