@@ -11,7 +11,6 @@ pipeline {
    stage('Deployment') {
       steps {
         sh "whoami"
-        ansiblePlaybook(credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'playbook.yml')
       }
     }
   }
