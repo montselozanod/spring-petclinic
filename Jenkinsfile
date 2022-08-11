@@ -10,6 +10,7 @@ pipeline {
 
    stage('Deployment') {
       steps {
+        sh "whoami"
         ansiblePlaybook(disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'playbook.yml')
       }
     }
