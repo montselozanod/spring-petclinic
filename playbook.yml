@@ -11,7 +11,7 @@
       name: httpd
       state: latest
   - name: Copy jar file
-    copy: src=./target/*.jar dest=/opt/
+    copy: src=target/spring-petclinic-2.7.0-SNAPSHOT.jar dest=/opt/
   - name: Execute jar
     shell: java -Dserver.port=8080 -jar opt/*.jar'
   
